@@ -10,7 +10,7 @@ Companion docs: `AI StudyOS — Simplified PRD (Student Edition).md`, `AI StudyO
 | Layer | Tech |
 |---|---|
 | Frontend | Next.js 14 + TypeScript + Tailwind (in `frontend/`) |
-| Backend | FastAPI + SQLAlchemy 2.0 + Alembic (in `backend/`) |
+| Backend | FastAPI + SQLAlchemy 2.0 + Alembic (in `backend/`, deps via `uv` + `pyproject.toml`) |
 | DB | PostgreSQL 16 (Docker Compose or local) |
 | Auth (Phase 1) | JWT + bcrypt stubs in `app/core/security.py` |
 | PDF/AI (Phase 3) | PyMuPDF + one LLM API, stubs in `app/services/` |
@@ -19,7 +19,8 @@ Companion docs: `AI StudyOS — Simplified PRD (Student Edition).md`, `AI StudyO
 
 ### 0. Prerequisites
 
-- Python 3.12+ (`py --version`), Node 18+ (`node --version`), PostgreSQL running.
+- `uv` ([install](https://docs.astral.sh/uv/getting-started/installation/)) — manages the Python version, virtualenv, and all backend deps. No manual `venv`/`pip` needed.
+- Node 18+ (`node --version`), PostgreSQL running.
 - Either Docker Desktop **or** a local Postgres on port 5432.
 
 ### 1. Database
@@ -35,22 +36,23 @@ docker compose up -d
 
 ```powershell
 cd backend
-py -m venv .venv; .\.venv\Scripts\Activate.ps1
-py -m pip install -r requirements.txt
-copy ..\ .env.example .env
+uv sync
+copy ..\.env.example .env
 # edit .env → set DATABASE_URL + JWT_SECRET_KEY
-alembic upgrade head
-py -m pytest -q
-py -m uvicorn app.main:app --reload --port 8000
+uv run alembic upgrade head
+uv run pytest -q
+uv run uvicorn app.main:app --reload --port 8000
 # → http://localhost:8000/docs  and  http://localhost:8000/health → {"status":"ok"}
 ```
 
 Seed demo data (optional):
 
 ```powershell
-py seed.py
+uv run seed.py
 # login later with demo@studyos.local / demo1234 (Phase 1 wires it up)
 ```
+
+> Deps live in `backend/pyproject.toml` + `backend/uv.lock` (source of truth). `uv sync` creates/updates `.venv/`; always run backend commands with the `uv run` prefix so they use the project venv.
 
 ### 3. Frontend
 
@@ -98,6 +100,6 @@ See `PHASE0_HANDOVER.md` for the ER diagram + column details.
 ## What Phase 0 proves (exit check M0)
 
 - `docker compose up` starts the DB (or local PG works).
-- `alembic upgrade head` creates all 9 tables.
+- `uv run alembic upgrade head` creates all 9 tables.
 - `/docs` opens, `/health` returns OK, `npm run dev` shows navigation.
-- `py seed.py` runs without duplicating data.
+- `uv run seed.py` runs without duplicating data.

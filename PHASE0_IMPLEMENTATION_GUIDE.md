@@ -10,7 +10,7 @@
 | 0.4 | Alembic + initial migration | `backend/alembic.ini`, `alembic/env.py`, `versions/0001_phase0_initial.py` | `alembic upgrade head` |
 | 0.5 | FastAPI skeleton | `app/main.py`, `core/`, `routers/`, `services/`, `schemas/` | `/docs`, `/health` |
 | 0.6 | Next.js skeleton | `frontend/app/*`, `lib/api.ts`, `components/` | `npm run dev` |
-| 0.7 | Seed script | `backend/seed.py` | `py seed.py` (idempotent) |
+| 0.7 | Seed script | `backend/seed.py` | `uv run seed.py` (idempotent) |
 | 0.8 | Handover doc | `PHASE0_HANDOVER.md` | student runs alone |
 
 ## .env requirements (full reference)
@@ -20,7 +20,7 @@
 | Var | Required in | Default | Notes |
 |---|---|---|---|
 | `DATABASE_URL` | Phase 0 | `postgresql+psycopg2://postgres:postgres@localhost:5432/aistudyos` | Docker Compose values must match. Inside Docker network use host `db`. |
-| `JWT_SECRET_KEY` | Phase 1 | `change-me-...` | Generate: `py -c "import secrets; print(secrets.token_urlsafe(32))"`. Never commit. |
+| `JWT_SECRET_KEY` | Phase 1 | `change-me-...` | Generate: `uv run python -c "import secrets; print(secrets.token_urlsafe(32))"`. Never commit. |
 | `JWT_ALGORITHM` | Phase 1 | `HS256` | Keep default. |
 | `JWT_EXPIRE_MINUTES` | Phase 1 | `10080` | 7 days. |
 | `APP_ENV` | Phase 0 | `development` | Returned by `/health`; set `production` on Render/Railway. |
@@ -48,6 +48,7 @@
 6. **Stubs, not empty dirs.** Every future router/service exists with a `_stub` route + TODO so imports/wiring already work and the student replaces bodies.
 7. **Two health endpoints.** `/health` needs no DB (proves the app boots); `/health/db` runs `SELECT 1` (proves wiring). Tests only hit the former so CI needs no Postgres.
 8. **Seed is idempotent.** Lookup by email before insert; safe to run twice — required for the M0 demo.
+9. **`uv` owns the Python toolchain.** `backend/pyproject.toml` + `backend/uv.lock` are the single source of truth for deps (`requirements.txt` removed); `uv sync` creates `.venv/`, and every backend command runs via `uv run` so it always uses the project venv — no manual activation, no `pip install`.
 
 ## What was intentionally left for later
 
@@ -58,9 +59,10 @@
 - Phase 5: `/tutor/chat` mode templates + context trimming.
 - Phase 6: Recharts, Vercel/Render deploy, full test suite (LLM mocked).
 
-## Verification log (mentor run, 2026-10-05)
+## Verification log (mentor run, 2026-10-06 — uv toolchain)
 
-- `py -m pytest -q` — 3 passed (`test_health_ok`, `test_openapi_exposes_health`, `test_all_tables_created`; models use SQLite in-memory, API via TestClient — no live DB needed).
+- `uv sync` — resolves from `backend/pyproject.toml`, creates `.venv/`, writes `backend/uv.lock`.
+- `uv run pytest -q` — 3 passed (`test_health_ok`, `test_openapi_exposes_health`, `test_all_tables_created`; models use SQLite in-memory, API via TestClient — no live DB needed).
 - `npx tsc --noEmit` — exit 0. `npm run build` — Next 14.2.35, 9 routes compiled (/, /login, /register, /planner, /documents, /kits/[id], /tutor, /progress).
-- `alembic history` — `<base> -> 0001_phase0 (head)`. `alembic upgrade head` requires a reachable Postgres with the correct password in `DATABASE_URL`; on this machine the local PG password differed from the `postgres/postgres` default, so `upgrade`/`check` correctly failed with `password authentication failed` until `DATABASE_URL` is set — this is the expected student setup step, not a code bug.
+- `uv run alembic current` → `0001_phase0 (head)`; all 9 tables (`users, courses, tasks, sessions, documents, study_kits, questions, quiz_results, chat_messages`) present in `AI_SLM` (verified via inspector).
 - `/health` needs no DB; `/health/db` runs `SELECT 1` to confirm wiring once the DB is up.

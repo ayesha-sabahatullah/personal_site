@@ -5,16 +5,15 @@ Date: 2026-10-05. Goal: you run the full stack alone on day 1, then build Phase 
 ## 1. Setup (do this first, ~15 min)
 
 1. Clone repo, then start Postgres: `docker compose up -d` (or create local db `aistudyos`).
-2. Backend:
+2. Backend (needs `uv` installed — no venv/pip steps):
    ```
    cd backend
-   py -m venv .venv; .\.venv\Scripts\Activate.ps1
-   py -m pip install -r requirements.txt
+   uv sync
    copy ..\.env.example .env
-   # set JWT_SECRET_KEY: py -c "import secrets; print(secrets.token_urlsafe(32))"
-   alembic upgrade head
-   py -m pytest -q        # expect 3 passed
-   py -m uvicorn app.main:app --reload --port 8000
+   # set JWT_SECRET_KEY: uv run python -c "import secrets; print(secrets.token_urlsafe(32))"
+   uv run alembic upgrade head
+   uv run pytest -q        # expect 3 passed
+   uv run uvicorn app.main:app --reload --port 8000
    ```
    Open http://localhost:8000/docs and http://localhost:8000/health.
 3. Frontend (second terminal):
@@ -25,7 +24,7 @@ Date: 2026-10-05. Goal: you run the full stack alone on day 1, then build Phase 
    npm run dev
    ```
    Open http://localhost:3000 — nav lists all 7 screens (placeholders with TODOs).
-4. Optional seed: `py seed.py` (in backend/) → demo user + 3 tasks.
+4. Optional seed: `uv run seed.py` (in backend/) → demo user + 3 tasks.
 
 ## 2. Folder map (where to put Phase 1 code)
 
@@ -71,14 +70,16 @@ JSON columns use Postgres JSONB in production, plain JSON in SQLite tests.
 
 ```powershell
 # 1. Edit the SQLAlchemy model in backend/app/models/
-# 2. Generate:
-alembic revision --autogenerate -m "add xyz column"
+# 2. Generate (run from backend/):
+uv run alembic revision --autogenerate -m "add xyz column"
 # 3. Inspect backend/alembic/versions/<new>.py, then apply:
-alembic upgrade head
+uv run alembic upgrade head
 # 4. Commit BOTH the model change and the migration file in one PR.
 ```
 
 Rules: never edit `0001_phase0_initial.py`, never `downgrade` production, tell the mentor before changing a table.
+
+> Backend deps live in `backend/pyproject.toml` + `backend/uv.lock`. To add one: `uv add <pkg>` (dev-only: `uv add --dev <pkg>`), then commit the updated `pyproject.toml` + `uv.lock`.
 
 ## 5. How auth will work (preview, Phase 1)
 
@@ -98,8 +99,8 @@ Rules: never edit `0001_phase0_initial.py`, never `downgrade` production, tell t
 | Symptom | Fix |
 |---|---|
 | `connection refused :5432` | `docker compose up -d`; check `DATABASE_URL` host (localhost vs `db`) |
-| `alembic: command not found` | venv not activated or `pip install -r requirements.txt` missed |
-| `JWT_SECRET_KEY` default | generate one, restart uvicorn |
+| `uv: command not found` | install uv (https://docs.astral.sh/uv/getting-started/installation/), then `uv sync` in `backend/` |
+| `JWT_SECRET_KEY` default | generate one (`uv run python -c "import secrets; print(secrets.token_urlsafe(32))"`), restart uvicorn |
 | `npm run dev` port clash | `npm run dev -- -p 3001`, update CORS in backend `.env` |
 | CORS error in browser | `BACKEND_CORS_ORIGINS` must include the frontend URL |
 | Seed duplicates | seed.py is idempotent — safe to re-run; duplicates mean you changed the email constant |
@@ -109,4 +110,4 @@ Rules: never edit `0001_phase0_initial.py`, never `downgrade` production, tell t
 - [ ] `/health` → ok, `/health/db` → connected, `/docs` loads.
 - [ ] 9 tables visible in DB (`\dt` in psql).
 - [ ] Frontend nav renders, `NEXT_PUBLIC_API_URL` points at backend.
-- [ ] `py seed.py` runs twice cleanly; no secrets committed (`git status` shows no `.env`).
+- [ ] `uv run seed.py` runs twice cleanly; no secrets committed (`git status` shows no `.env`).

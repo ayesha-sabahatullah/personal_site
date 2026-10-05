@@ -1,7 +1,7 @@
 """Seed script — creates demo user + sample course/tasks.
 
 Usage:
-  py seed.py
+  uv run seed.py
 Requires DATABASE_URL to point at a migrated DB (run `alembic upgrade head` first).
 Idempotent: re-running will not duplicate the demo user.
 """
