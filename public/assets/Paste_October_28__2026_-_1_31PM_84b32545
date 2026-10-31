@@ -1,0 +1,1295 @@
+# Build a Professional Personal Portfolio, AI Prompt Library, and Learning Hub
+
+## 1. Your Role
+
+Act as a senior frontend engineer, Next.js architect, UI/UX designer, and design systems specialist.
+
+Build a complete, production-ready personal website for a content creator who is both an AI video creator and an educator.
+
+The website must combine three core purposes:
+
+1. A professional personal portfolio that showcases her identity, experience, creative work, and teaching background.
+2. An AI Prompt Library that allows visitors to discover AI video prompts, view associated video references, and copy prompts.
+3. A Learning Hub that organizes educational resources into courses, modules, lessons, notes, code examples, presentations, exercises, and downloadable files.
+
+The result must feel like a carefully designed personal brand website, not a generic SaaS dashboard, template, or basic CRUD application.
+
+Do not stop after producing a plan or mockup. Build the actual working application, including pages, reusable components, content architecture, responsive layouts, search, filters, navigation, and documentation.
+
+---
+
+## 2. Core Technical Stack
+
+Use the following stack:
+
+- Next.js with the App Router.
+- React.
+- TypeScript with strict type checking.
+- Tailwind CSS.
+- shadcn/ui where appropriate.
+- Lucide React for icons.
+- Framer Motion or Motion for subtle animations.
+- Local JSON files as the source of truth for website content.
+- Server Components for content-driven pages wherever possible.
+- Client Components only for interactive features such as search, filtering, mobile navigation, and clipboard actions.
+- A suitable Markdown renderer for educational content.
+- Zod for validating JSON content and configuration.
+- Next.js Metadata API for SEO.
+- Vercel for deployment.
+
+Use current, stable, mutually compatible package versions and follow the official Next.js App Router conventions.
+
+Do not introduce unnecessary dependencies.
+
+### Frontend-only architecture
+
+The website must not require:
+
+- A backend server.
+- A database.
+- An external CMS.
+- Authentication.
+- An admin dashboard.
+- Server actions that mutate persistent data.
+- API routes for ordinary content retrieval.
+- A paid third-party service to display content.
+
+All published content must be bundled with the application from repository files.
+
+Browser-side interactions may use standard browser APIs for clipboard access, local search, filtering, and other interface features.
+
+The website must deploy on Vercel using the standard Next.js deployment workflow.
+
+Prefer a statically generated website wherever practical. Use `generateStaticParams` for content-driven routes and avoid request-time server dependencies.
+
+If a feature requires persistent storage, explain the limitation and provide a suitable frontend-only alternative. Do not introduce a database simply to support optional functionality.
+
+---
+
+## 3. Visual Identity and Design Direction
+
+### Primary theme: Pink
+
+Create a sophisticated pink visual identity that feels feminine, creative, modern, and professional.
+
+Use the following palette as the initial design system:
+
+| Purpose | Color |
+|---|---|
+| Primary background | `#FFF8FB` |
+| Secondary background | `#FFF0F5` |
+| Soft pink surfaces | `#FCE4EC` |
+| Primary pink | `#E75480` |
+| Deep rose | `#BE185D` |
+| Dark text | `#351827` |
+| Secondary text | `#795B6B` |
+| Borders | `#F1D5E0` |
+| White surfaces | `#FFFFFF` |
+| Success state | `#15803D` |
+
+Define these colors as reusable CSS variables or design tokens. Avoid scattering raw color values throughout components.
+
+The palette can be refined during implementation, but pink must remain the defining visual identity.
+
+### Design principles
+
+- Use a clean editorial layout with generous whitespace.
+- Combine large, expressive headings with readable body text.
+- Use elegant typography, such as a contemporary sans-serif paired with a restrained serif display font where appropriate.
+- Use soft pink gradients sparingly.
+- Introduce subtle shadows, thin borders, and rounded corners.
+- Use high-quality imagery and video thumbnails for creative work.
+- Keep decorative elements restrained.
+- Maintain strong contrast and accessible text sizes.
+- Use consistent spacing, grid systems, and responsive typography.
+- Create distinct visual treatments for the portfolio, prompt library, and learning hub while maintaining one unified brand.
+
+Avoid excessive glassmorphism, oversized rounded cards everywhere, excessive gradients, unnecessary floating elements, and generic AI-generated landing-page aesthetics.
+
+The website should feel personal and editorial, with an emphasis on content and creative work.
+
+### Interaction and animation
+
+Add subtle, purposeful motion:
+
+- Smooth section transitions.
+- Gentle hover effects on project cards.
+- Small button interactions.
+- Animated mobile navigation.
+- Smooth reveal effects where appropriate.
+- Clear loading, empty, success, and error states.
+
+Respect `prefers-reduced-motion`.
+
+Do not sacrifice performance or accessibility for animation.
+
+---
+
+## 4. Website Information Architecture
+
+Create the following main routes:
+
+```text
+/
+├── /about
+├── /projects
+│   └── /projects/[slug]
+├── /prompts
+│   └── /prompts/[slug]
+├── /learn
+│   └── /learn/[courseSlug]
+│       └── /learn/[courseSlug]/[moduleSlug]
+│           └── /learn/[courseSlug]/[moduleSlug]/[lessonSlug]
+├── /resources
+│   └── /resources/[slug]
+├── /contact
+├── /privacy
+└── /not-found
+```
+
+Use reusable dynamic templates instead of hardcoding a separate page for every project, prompt, course, module, lesson, or resource.
+
+The exact URL hierarchy may be adjusted if a simpler and more reliable structure better fits Next.js conventions, but preserve the distinction between courses, modules, lessons, and standalone resources.
+
+Create a consistent site header, navigation, footer, and shared layout.
+
+Include a mobile navigation menu and visible active navigation states.
+
+---
+
+## 5. Homepage
+
+The homepage is the central personal branding page.
+
+Build the following sections.
+
+### A. Header
+
+Include:
+
+- Logo or personal wordmark.
+- Home.
+- About.
+- Creative Work.
+- AI Prompts.
+- Learning Hub.
+- Contact.
+- A prominent call-to-action such as "Explore Resources".
+
+Use a clean, sticky header if it improves usability.
+
+On smaller screens, collapse navigation into an accessible mobile menu.
+
+### B. Hero section
+
+Create a visually striking introductory section.
+
+Include:
+
+- A large personal introduction.
+- A short professional description.
+- A profile image.
+- Primary CTA: "Explore My Work".
+- Secondary CTA: "Explore Learning Resources".
+- Optional social media links.
+- A small visual accent that reinforces the pink identity.
+
+Use editable placeholder content stored in `site-settings.json`.
+
+Do not invent a real person's name, educational qualifications, employers, achievements, or contact details.
+
+Use obvious placeholders such as `[Your Name]`, `[Your Professional Title]`, and `[Your Biography]` when actual information is unavailable.
+
+### C. About preview
+
+Introduce the creator's background, professional interests, creative journey, and teaching philosophy.
+
+Include a link to the complete About page.
+
+### D. Featured creative projects
+
+Display selected AI-generated videos and other creative projects.
+
+Each project card should include:
+
+- Thumbnail.
+- Project title.
+- Short description.
+- Category.
+- Relevant AI tools.
+- Optional external video link.
+- Optional project detail link.
+
+Load content from `projects.json`.
+
+### E. AI Prompt Library preview
+
+Display a curated selection of featured prompts.
+
+Each card should include:
+
+- Prompt title.
+- Preview image or associated video thumbnail.
+- Short description.
+- AI tool.
+- Category.
+- Tags.
+- View prompt action.
+- Optional quick-copy action.
+
+Load content from `prompts.json`.
+
+Include a clear CTA linking to the complete prompt library.
+
+### F. Learning Hub preview
+
+Display selected courses and learning materials.
+
+Each course card should include:
+
+- Course title.
+- Description.
+- Subject.
+- Difficulty level.
+- Number of published modules or lessons, calculated from content data.
+- Featured image or visual treatment.
+- Explore course action.
+
+Load content from the course and module data.
+
+### G. Teaching and expertise
+
+Create a concise section highlighting teaching experience, areas of expertise, and educational interests.
+
+Allow the owner to configure skills, experience entries, and achievements in JSON.
+
+### H. Social proof and achievements
+
+Support optional testimonials, achievements, certifications, and statistics.
+
+Do not display invented statistics, testimonials, student counts, or achievements.
+
+Hide optional sections automatically when they have no published content.
+
+### I. Contact call-to-action
+
+Create an attractive closing section inviting visitors, students, and potential collaborators to connect.
+
+Provide configurable email and social links.
+
+### J. Footer
+
+Include:
+
+- Personal branding.
+- Navigation links.
+- Social links.
+- Copyright year.
+- Optional attribution.
+- Back-to-top link if appropriate.
+
+---
+
+## 6. About Page
+
+Build a complete professional profile page.
+
+Support the following configurable sections:
+
+- Biography.
+- Professional introduction.
+- Education.
+- Teaching experience.
+- Creative experience.
+- Skills and areas of expertise.
+- AI tools and technologies.
+- Certifications.
+- Achievements.
+- Personal interests.
+- Teaching philosophy.
+- Social and professional profiles.
+
+Use a timeline or editorial layout for education and experience where appropriate.
+
+All information must come from `site-settings.json` or dedicated content files.
+
+Sections should be optional and automatically hidden if they contain no published entries.
+
+---
+
+## 7. Creative Projects Library
+
+Create a searchable projects page at `/projects`.
+
+Include:
+
+- Responsive project grid.
+- Search by project title, description, category, and tags.
+- Category filters.
+- AI tool filters.
+- Featured projects.
+- Optional sorting by publication date.
+- Empty-state messaging.
+- Pagination or load-more functionality if the collection becomes large.
+
+Each project should have a dynamic detail page at `/projects/[slug]`.
+
+Project detail pages should support:
+
+- Title and description.
+- Cover image.
+- Video embed or external video link.
+- Project background.
+- Creative process.
+- Tools used.
+- Related prompts.
+- Related projects.
+- Publication date.
+- Optional credits.
+
+Support YouTube and other approved video providers through safe, validated embed URLs or ordinary external links.
+
+Do not autoplay videos with sound.
+
+If an embedded video is unavailable, show a useful fallback with a link to the original video.
+
+---
+
+## 8. AI Prompt Library
+
+Build a complete AI prompt discovery experience at `/prompts`.
+
+### Prompt listing
+
+Provide:
+
+- Responsive grid layout.
+- Search input.
+- Category filters.
+- AI tool filters.
+- Tag filters.
+- Featured prompt section.
+- Sorting by newest and featured.
+- Pagination or load-more functionality.
+- Empty results state.
+- Clear filters action.
+
+Search should match prompt titles, descriptions, prompt text, tools, categories, and tags.
+
+Filters should work together rather than replacing one another.
+
+### Prompt cards
+
+Each card should display:
+
+- Thumbnail or video preview.
+- Prompt title.
+- Short description.
+- AI tool.
+- Category.
+- Relevant tags.
+- Copy prompt button.
+- View details button.
+
+### Prompt detail page
+
+Create a reusable dynamic page at `/prompts/[slug]`.
+
+Include:
+
+1. Prompt title and summary.
+2. Associated video or video thumbnail.
+3. Full prompt text.
+4. AI tool information.
+5. Category and tags.
+6. Copy prompt button.
+7. Optional negative prompt.
+8. Optional generation settings.
+9. Optional creation notes.
+10. Related prompts.
+11. Related projects.
+12. Back-to-library navigation.
+
+### Clipboard functionality
+
+Implement a working copy-to-clipboard interaction.
+
+When a visitor clicks "Copy Prompt":
+
+- Copy the full prompt text.
+- Show a clear success message.
+- Temporarily change the button label to "Copied!".
+- Handle clipboard permission errors gracefully.
+- Provide an accessible status announcement.
+- Avoid copying shortened preview text.
+
+Use the Clipboard API where supported.
+
+### Prompt data flexibility
+
+A prompt may contain multiple AI tools, tags, media references, or generation settings.
+
+Do not assume every prompt has a video, thumbnail, negative prompt, or settings object.
+
+Hide absent optional fields gracefully.
+
+---
+
+## 9. Learning Hub
+
+Create an educational resource platform at `/learn`.
+
+The learning system must use a flexible hierarchy.
+
+```text
+Course
+  └── Module
+       └── Lesson
+            ├── Written Notes
+            ├── Code Examples
+            ├── PDFs
+            ├── Presentations
+            ├── Exercises
+            ├── Worksheets
+            ├── External Links
+            └── Other Learning Materials
+```
+
+A course can have any number of modules.
+
+A module can have any number of lessons.
+
+A lesson can have any number of resources of different types.
+
+Do not assume all courses contain the same number of modules or lessons.
+
+### A. Course listing
+
+At `/learn`, show all published courses.
+
+Support:
+
+- Search by course title and description.
+- Subject filters.
+- Topic filters.
+- Difficulty filters.
+- Featured courses.
+- Course cards.
+- Optional pagination or load-more functionality.
+
+Course cards should display title, description, subject, level, and the number of published modules or lessons.
+
+Calculate counts from actual published content rather than hardcoding them.
+
+### B. Course detail
+
+At `/learn/[courseSlug]`, display:
+
+- Course title.
+- Description.
+- Subject and level.
+- Learning objectives.
+- Prerequisites.
+- Course duration if provided.
+- Module list.
+- Lesson counts.
+- Published learning materials.
+- Related courses.
+- Start learning or continue browsing CTA.
+
+Only show published modules and lessons.
+
+### C. Module detail
+
+At `/learn/[courseSlug]/[moduleSlug]`, display:
+
+- Course breadcrumb.
+- Module title and description.
+- Module learning objectives.
+- Ordered lesson list.
+- Lesson summaries.
+- Lesson publication status where appropriate.
+- Previous and next module navigation when applicable.
+
+### D. Lesson detail
+
+At `/learn/[courseSlug]/[moduleSlug]/[lessonSlug]`, create a comfortable reading experience.
+
+Include:
+
+- Breadcrumb navigation.
+- Course and module information.
+- Lesson title.
+- Reading time if available.
+- Table of contents generated from headings.
+- Formatted written content.
+- Code blocks with syntax highlighting.
+- Copy-code buttons.
+- Downloadable materials.
+- External resource links.
+- Related lessons.
+- Previous and next lesson navigation.
+- Sidebar or collapsible course outline.
+- Mobile-friendly lesson navigation.
+
+Support Markdown or MDX-style educational content where appropriate.
+
+Use a consistent, safe content-rendering strategy. Do not execute arbitrary code embedded in lesson content.
+
+Use the appropriate syntax highlighting library if needed, and ensure code examples remain readable on small screens.
+
+### E. Learning progress
+
+Optionally provide a lightweight frontend-only way to mark lessons as completed using localStorage.
+
+If implemented:
+
+- Explain through the interface that progress is stored in the current browser.
+- Do not require an account.
+- Do not claim progress synchronizes across devices.
+- Handle unavailable browser storage safely.
+- Do not make course completion a requirement for accessing lessons.
+
+This feature is optional and must not delay implementation of the core learning library.
+
+---
+
+## 10. Standalone Resource Library
+
+Create `/resources` as a unified library of individual learning materials.
+
+Support resource types such as:
+
+- Notes.
+- PDF documents.
+- Presentations.
+- Worksheets.
+- Exercises.
+- Code examples.
+- Tutorials.
+- External articles.
+- Videos.
+- Reference materials.
+
+Each resource should include, where applicable:
+
+- Title.
+- Description.
+- Resource type.
+- Subject.
+- Topics.
+- Tags.
+- Difficulty level.
+- Related course.
+- Related module or lesson.
+- Download URL or external URL.
+- Publication date.
+- Featured status.
+
+Build search, filters, sorting, and pagination or load-more functionality.
+
+Each resource should have a reusable detail page at `/resources/[slug]`.
+
+For downloadable files, provide accessible download links.
+
+Files should be stored under `public/files/` when appropriate.
+
+Do not assume that every resource is downloadable. Some resources may only link to external websites.
+
+---
+
+## 11. Contact Page
+
+Create a professional contact page with:
+
+- A short invitation to connect.
+- Email contact link.
+- Social media links.
+- Professional profile links.
+- Optional collaboration information.
+
+Because the website must be frontend-only, do not build a contact form that pretends to send messages without a backend.
+
+Instead, use a `mailto:` link with a prefilled subject where appropriate, or link to an existing external contact platform.
+
+Make all contact information configurable through JSON.
+
+---
+
+## 12. JSON-Driven Content Architecture
+
+This is one of the most important requirements.
+
+The website must treat content as structured data rather than hardcoded page content.
+
+Create a repository structure similar to:
+
+```text
+project-root/
+├── app/
+│   ├── layout.tsx
+│   ├── page.tsx
+│   ├── not-found.tsx
+│   ├── about/
+│   ├── projects/
+│   ├── prompts/
+│   ├── learn/
+│   ├── resources/
+│   ├── contact/
+│   └── privacy/
+├── components/
+│   ├── layout/
+│   ├── home/
+│   ├── projects/
+│   ├── prompts/
+│   ├── learning/
+│   ├── resources/
+│   ├── search/
+│   ├── ui/
+│   └── shared/
+├── content/
+│   ├── site-settings.json
+│   ├── projects.json
+│   ├── prompts.json
+│   ├── courses.json
+│   ├── modules.json
+│   ├── lessons.json
+│   └── resources.json
+├── lib/
+│   ├── content/
+│   ├── validation/
+│   ├── search/
+│   ├── utils/
+│   └── seo/
+├── schemas/
+│   ├── site-settings.schema.ts
+│   ├── project.schema.ts
+│   ├── prompt.schema.ts
+│   ├── course.schema.ts
+│   ├── module.schema.ts
+│   ├── lesson.schema.ts
+│   └── resource.schema.ts
+├── public/
+│   ├── images/
+│   ├── videos/
+│   ├── files/
+│   │   ├── notes/
+│   │   ├── presentations/
+│   │   └── worksheets/
+│   └── favicon.ico
+├── scripts/
+│   └── validate-content.ts
+├── package.json
+├── tsconfig.json
+├── README.md
+└── .gitignore
+```
+
+You may refine this structure when needed, but keep content, schemas, UI components, and business logic clearly separated.
+
+### Content loading
+
+Create reusable functions such as:
+
+- `getSiteSettings()`
+- `getAllProjects()`
+- `getProjectBySlug(slug)`
+- `getAllPrompts()`
+- `getPromptBySlug(slug)`
+- `getAllCourses()`
+- `getCourseBySlug(slug)`
+- `getModulesByCourse(courseId)`
+- `getLessonsByModule(moduleId)`
+- `getLessonBySlug(slug)`
+- `getAllResources()`
+- `getResourceBySlug(slug)`
+
+Use a consistent approach for loading and validating content.
+
+Avoid duplicating JSON parsing and relationship resolution across pages.
+
+### Content relationships
+
+Use stable IDs or slugs to connect records.
+
+For example:
+
+- A module references its course.
+- A lesson references its course and module.
+- A resource may reference a course, module, lesson, or related project.
+- A prompt may reference one or more projects.
+- A project may reference related prompts.
+
+Resolve these relationships through reusable content utilities.
+
+Validate that references point to existing records.
+
+Prevent duplicate slugs within the relevant content collection.
+
+### Content publishing
+
+Each content record should support:
+
+- `status`: `"draft"` or `"published"`.
+- `featured`: boolean where applicable.
+- `createdAt`.
+- `updatedAt` where appropriate.
+
+Use ISO-formatted dates.
+
+Only published records may appear in public listings, search results, related-content sections, navigation, or generated routes.
+
+Draft records must never leak through direct URL access or static route generation.
+
+If a published lesson belongs to an unpublished module or course, prevent it from being exposed.
+
+### Adding new content
+
+Adding ordinary content must not require editing React components or route files.
+
+The owner should be able to:
+
+1. Add a record to the relevant JSON file.
+2. Add associated images or files to the appropriate `public/` directory.
+3. Commit and push the changes.
+4. Let Vercel rebuild the website.
+5. See the new published content on the website.
+
+Update the README with clear examples for adding projects, prompts, courses, modules, lessons, and resources.
+
+Explain that repository changes must be committed and deployed before new content appears on the live website.
+
+---
+
+## 13. JSON Schemas and Content Validation
+
+Use Zod schemas to validate every content collection.
+
+Validate:
+
+- Required fields.
+- String lengths where appropriate.
+- Unique slugs.
+- Valid status values.
+- Valid date formats.
+- Expected arrays and object shapes.
+- Valid internal relationships.
+- Required course and module references.
+- Duplicate IDs.
+- Basic URL formats.
+- Supported resource types.
+- Invalid or missing file references where practical.
+- Consistent publication rules.
+
+Create a command such as:
+
+```bash
+npm run validate-content
+```
+
+This command should validate all JSON files and print clear, actionable errors.
+
+Make sure it exits with a nonzero status when validation fails.
+
+Run validation during the production build so invalid content cannot silently reach deployment.
+
+Keep validation separate from rendering logic.
+
+Do not silently discard invalid records without explaining the problem.
+
+If a record is invalid, provide an error identifying the filename, record ID or slug, and the field that needs fixing.
+
+---
+
+## 14. Static Generation and Dynamic Routes
+
+Use Next.js App Router features to generate content pages from JSON data.
+
+Implement `generateStaticParams` for:
+
+- Project detail pages.
+- Prompt detail pages.
+- Course pages.
+- Module pages.
+- Lesson pages.
+- Standalone resource pages.
+
+Generate routes only for valid published records.
+
+Use reusable route templates and shared content functions.
+
+Handle unknown slugs with appropriate not-found behavior.
+
+Do not rely on a runtime API or database to load repository JSON.
+
+Configure the application for a Vercel-friendly production build.
+
+Where appropriate, use static rendering and pre-rendering. Avoid forcing the entire application into client-side rendering.
+
+If using `output: "export"` is appropriate, ensure dynamic routes are fully generated and all selected Next.js features are compatible with static export. Otherwise, use standard Vercel static generation with Next.js.
+
+Do not mix incompatible static-export assumptions with features that require a server at runtime.
+
+---
+
+## 15. Search, Filtering, and Pagination
+
+Implement reusable search and filtering utilities.
+
+### Prompt search
+
+Search across:
+
+- Title.
+- Description.
+- Prompt text.
+- AI tools.
+- Categories.
+- Tags.
+
+### Project search
+
+Search across:
+
+- Title.
+- Description.
+- Category.
+- Tools.
+- Tags.
+
+### Learning search
+
+Search across:
+
+- Course titles.
+- Course descriptions.
+- Module titles.
+- Lesson titles.
+- Lesson summaries.
+- Subjects.
+- Topics.
+- Tags.
+- Resource titles and descriptions.
+
+Where useful, offer a global search interface that can discover both prompts and learning materials.
+
+Use local data rather than remote APIs.
+
+Make filtering work correctly with multiple selected criteria.
+
+Add sensible sorting options.
+
+Use pagination or load-more functionality where necessary, and avoid rendering unnecessarily large lists.
+
+Ensure search works when the visitor enters uppercase letters, lowercase letters, or partial words.
+
+Show a helpful empty state when no results match.
+
+Provide a clear way to reset search and filters.
+
+For a static frontend, client-side filtering of the already bundled public content is acceptable. If content grows significantly, document the practical limitations of loading large JSON collections into the browser.
+
+---
+
+## 16. SEO and Metadata
+
+Implement proper SEO for all public pages.
+
+Include:
+
+- Unique page titles.
+- Meta descriptions.
+- Canonical URLs where appropriate.
+- Open Graph metadata.
+- Social sharing images where available.
+- Favicon.
+- Semantic HTML.
+- Appropriate heading hierarchy.
+- Descriptive image alt text.
+- `robots.txt`.
+- `sitemap.xml`.
+
+Use the Next.js Metadata API and generate metadata dynamically from published JSON records.
+
+Create a configurable production site URL in `site-settings.json` or a suitable environment variable.
+
+Do not publish placeholder metadata, broken canonical URLs, or draft content in the sitemap.
+
+If structured data is appropriate, implement relevant JSON-LD for the person's profile, projects, or educational content without inventing information.
+
+---
+
+## 17. Accessibility
+
+Follow practical WCAG accessibility principles.
+
+Include:
+
+- Semantic HTML.
+- Keyboard-accessible navigation.
+- Visible focus indicators.
+- Proper form and input labels.
+- Accessible dropdowns and mobile navigation.
+- Sufficient text contrast.
+- Meaningful alt text.
+- Accessible status announcements for copy actions.
+- Reduced-motion support.
+- Descriptive link labels.
+- Proper button semantics.
+- Correct heading hierarchy.
+
+Do not use color alone to convey meaning.
+
+Ensure all important features work with a keyboard.
+
+---
+
+## 18. Performance and Reliability
+
+Optimize for a fast, reliable frontend.
+
+Requirements:
+
+- Use Server Components by default.
+- Minimize unnecessary client-side JavaScript.
+- Use `next/image` where compatible with the chosen deployment configuration.
+- Optimize image dimensions and loading behavior.
+- Lazy-load below-the-fold media.
+- Avoid autoplaying background videos by default.
+- Use responsive images.
+- Avoid unnecessary dependencies.
+- Avoid large animation libraries for simple effects.
+- Prevent layout shifts.
+- Keep components small and reusable.
+- Use appropriate caching and static generation.
+- Add graceful fallbacks for missing optional media.
+- Avoid hydration mismatches.
+- Handle missing content without crashing the entire website.
+
+The website should remain usable when optional images, videos, external links, or resource files are missing.
+
+---
+
+## 19. Example JSON Records
+
+Create realistic sample content to demonstrate the website.
+
+All sample personal information must be clearly identified as placeholder content.
+
+### A. `site-settings.json`
+
+Support fields for:
+
+- Name.
+- Professional title.
+- Short biography.
+- Full biography.
+- Profile image.
+- Logo.
+- Email.
+- Social profiles.
+- Navigation configuration.
+- Featured project IDs or slugs.
+- Featured prompt IDs or slugs.
+- Featured course IDs or slugs.
+- Education.
+- Experience.
+- Skills.
+- Achievements.
+- SEO defaults.
+- Site URL.
+
+### B. `projects.json`
+
+Example structure:
+
+```json
+[
+  {
+    "id": "project-001",
+    "slug": "example-ai-video",
+    "title": "Example AI Video",
+    "description": "A placeholder description of an AI-generated video.",
+    "category": "AI Video",
+    "tools": ["Example AI Tool"],
+    "tags": ["cinematic", "creative"],
+    "thumbnail": "/images/projects/example-ai-video.jpg",
+    "videoUrl": "",
+    "featured": true,
+    "status": "published",
+    "createdAt": "2026-01-15",
+    "promptIds": ["prompt-001"]
+  }
+]
+```
+
+### C. `prompts.json`
+
+Support fields such as:
+
+```json
+[
+  {
+    "id": "prompt-001",
+    "slug": "cinematic-example",
+    "title": "Cinematic Example Prompt",
+    "description": "A sample prompt demonstrating the prompt library.",
+    "prompt": "Replace this sample with your complete AI generation prompt.",
+    "negativePrompt": "",
+    "category": "Cinematic",
+    "tools": ["Example AI Tool"],
+    "tags": ["cinematic", "lighting"],
+    "thumbnail": "/images/prompts/cinematic-example.jpg",
+    "videoUrl": "",
+    "generationSettings": {},
+    "featured": true,
+    "status": "published",
+    "createdAt": "2026-01-15",
+    "projectIds": ["project-001"]
+  }
+]
+```
+
+### D. Courses, modules, lessons, and resources
+
+Design appropriate schemas for:
+
+- Courses.
+- Modules.
+- Lessons.
+- Resources.
+
+Support a course with multiple modules and lessons, ordered by an explicit `order` field.
+
+Support lesson content using either a Markdown file referenced from the JSON or a structured content field with a clearly documented rendering approach.
+
+Support multiple resource attachments per lesson.
+
+Use stable IDs and validate relationships.
+
+Include a small but coherent set of sample records so that the complete browsing experience can be tested immediately.
+
+---
+
+## 20. UI Components
+
+Create reusable components as appropriate, including:
+
+- `SiteHeader`
+- `MobileNavigation`
+- `SiteFooter`
+- `HeroSection`
+- `SectionHeading`
+- `ProjectCard`
+- `ProjectGrid`
+- `PromptCard`
+- `PromptGrid`
+- `PromptDetail`
+- `CopyPromptButton`
+- `SearchInput`
+- `FilterBar`
+- `ActiveFilterChips`
+- `EmptyState`
+- `Pagination`
+- `CourseCard`
+- `CourseGrid`
+- `CourseOutline`
+- `ModuleAccordion`
+- `LessonNavigation`
+- `LessonContent`
+- `CodeBlock`
+- `ResourceCard`
+- `ResourceList`
+- `Breadcrumbs`
+- `SocialLinks`
+- `ContactCTA`
+
+These are suggested building blocks, not a requirement to create every component if a simpler structure is better.
+
+Avoid creating enormous components that contain unrelated functionality.
+
+Avoid duplicating layouts, search logic, validation, or content-loading logic.
+
+---
+
+## 21. Functional Requirements and Acceptance Criteria
+
+The project is complete only when the following conditions are met.
+
+### Portfolio
+
+- The homepage is visually polished and responsive.
+- The About page loads content from configuration.
+- Projects appear dynamically from JSON.
+- Project detail routes work for all published projects.
+- Social links and contact links are configurable.
+
+### AI prompts
+
+- All published prompts appear automatically.
+- Search and filters work together.
+- Each prompt has a dynamic detail page.
+- Full prompt text can be copied.
+- Clipboard errors are handled gracefully.
+- Related projects and prompts resolve correctly.
+- Draft prompts never appear publicly.
+
+### Learning hub
+
+- Courses are loaded from JSON.
+- Course pages resolve their modules correctly.
+- Module pages display their lessons in the correct order.
+- Lesson pages render formatted educational content.
+- Code blocks are readable and support copy functionality.
+- Download links work for available files.
+- Previous and next lesson navigation is correct.
+- Draft content remains private.
+- Optional resources and course fields can be omitted safely.
+
+### Content management
+
+- New records appear without editing application code.
+- Content schemas validate correctly.
+- Duplicate slugs and broken relationships produce useful errors.
+- The validation command runs successfully.
+- Production builds validate content.
+- Documentation explains how to add and publish content.
+
+### Technical quality
+
+- TypeScript strict mode is enabled.
+- There are no avoidable TypeScript errors.
+- There are no avoidable ESLint errors.
+- The production build succeeds.
+- All internal links resolve correctly.
+- Missing slugs display a proper not-found page.
+- Responsive layouts work on mobile, tablet, and desktop.
+- The application deploys to Vercel without requiring a database or external CMS.
+
+---
+
+## 22. Implementation Workflow
+
+Follow this workflow.
+
+### Phase 1: Inspect and plan
+
+Inspect the existing repository before changing files.
+
+If the repository already contains a Next.js project, preserve useful existing configuration and components.
+
+Identify the current dependencies, routes, and styling setup.
+
+Create a short implementation plan.
+
+Do not stop after the plan.
+
+### Phase 2: Establish the foundation
+
+Set up:
+
+- Next.js App Router.
+- TypeScript.
+- Tailwind CSS.
+- Design tokens.
+- Shared layouts.
+- Global typography.
+- Header and footer.
+- Responsive navigation.
+
+### Phase 3: Build content infrastructure
+
+Implement:
+
+- JSON data files.
+- Zod schemas.
+- Content loading utilities.
+- Relationship resolution.
+- Draft filtering.
+- Slug validation.
+- Content validation script.
+
+### Phase 4: Build the main pages
+
+Implement the homepage, About page, projects library, prompt library, learning hub, resource library, and contact page.
+
+### Phase 5: Implement dynamic content routes
+
+Add project, prompt, course, module, lesson, and resource detail pages.
+
+Implement metadata generation and static route generation.
+
+### Phase 6: Add interactions
+
+Implement search, filters, sorting, pagination, clipboard actions, mobile navigation, related content, and optional local learning progress.
+
+### Phase 7: Polish and test
+
+Check:
+
+- Responsive behavior.
+- Accessibility.
+- Navigation.
+- Empty states.
+- Missing media.
+- Draft filtering.
+- Content validation.
+- SEO metadata.
+- Production build.
+- Vercel compatibility.
+
+Fix problems instead of merely listing them.
+
+### Phase 8: Document deployment
+
+Create a useful README containing:
+
+- Project setup.
+- Installation commands.
+- Development commands.
+- Production build commands.
+- Content validation commands.
+- JSON content structure.
+- Examples for adding every content type.
+- Image and file naming conventions.
+- How to preview changes locally.
+- How to deploy to Vercel.
+- How automatic deployment works after GitHub commits.
+- Known limitations of a frontend-only architecture.
+
+---
+
+## 23. Final Instructions
+
+Prioritize a polished, usable website over unnecessary complexity.
+
+Do not build an admin dashboard.
+
+Do not add a database, authentication system, or CMS.
+
+Do not hardcode individual projects, prompts, courses, modules, lessons, or resources inside UI components.
+
+Do not use fake testimonials or invented professional achievements.
+
+Do not create buttons that look functional but do nothing.
+
+Do not replace actual functionality with static mockups.
+
+Do not stop at a landing page. Implement the complete information architecture.
+
+Use sensible defaults for decisions not explicitly specified.
+
+If the repository is empty, initialize the application. If an existing application is present, work within its current structure.
+
+At the end, provide a concise implementation report containing:
+
+1. Features implemented.
+2. Main routes created.
+3. Content files and their schemas.
+4. Commands to run the project locally.
+5. How to add and publish new content.
+6. Build and validation results.
+7. Exact steps to deploy the project on Vercel.
+8. Any remaining limitations or unfinished items.
+
+**The final result should be a professional, pink-themed personal website that combines a creative portfolio, an AI prompt library, and a complete educational resource platform, all driven by repository-based JSON content and ready for deployment on Vercel.**

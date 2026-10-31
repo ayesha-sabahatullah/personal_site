@@ -1,3 +1,0 @@
-"""Placeholder for Alembic versions. Initial migration is generated via:
-alembic revision --autogenerate -m "phase0 initial schema"
-"""

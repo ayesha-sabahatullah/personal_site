@@ -1,0 +1,138 @@
+[
+  {
+    "id": "project-001",
+    "slug": "echoes-of-solitude",
+    "title": "Echoes of Solitude: A Cinematic Journey",
+    "description": "A poetic sci-fi speculative short exploring memory archives in an abandoned orbital station bathed in rose-gold twilight.",
+    "category": "AI Cinema",
+    "tools": [
+      "Runway Gen-3 Alpha",
+      "Midjourney v6.1",
+      "Topaz Video AI",
+      "DaVinci Resolve"
+    ],
+    "tags": [
+      "cinematic",
+      "sci-fi",
+      "anamorphic",
+      "atmospheric",
+      "slow-cinema"
+    ],
+    "thumbnail": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1200&auto=format&fit=crop",
+    "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ",
+    "background": "Commissioned as an experimental festival short, 'Echoes of Solitude' explores how digital consciousness preserves nostalgia. The project was conceived around strict optical rules: replicating 35mm Panavision C-Series anamorphic glass, subtle halation, and gentle volumetric light diffusion.",
+    "creativeProcess": "1. Keyframe Concept Generation: Generated 120 key visual seeds in Midjourney v6.1 using specific optical focal length prompt tokens (50mm anamorphic, f/1.8, warm rim lighting).\n2. Motion Synthesis: Brought selected keyframes into Runway Gen-3 Alpha with calibrated motion vectors (-1.5 zoom, subtle pan right, zero morphing).\n3. Temporal Stabilization: Handled frame artifacts and temporal jitter through Topaz Video AI Chronos Fast frame interpolation.\n4. Color Pipeline: Finished in DaVinci Resolve utilizing a custom Kodak 2383 print film emulation LUT customized for soft pastel magenta undertones.",
+    "promptIds": [
+      "prompt-001",
+      "prompt-004"
+    ],
+    "credits": [
+      "Direction & Prompt Engineering: [Your Name]",
+      "Original Score & Sound Design: Synthetic Sound Lab",
+      "Colorist: Aura Studios"
+    ],
+    "featured": true,
+    "status": "published",
+    "createdAt": "2026-01-18"
+  },
+  {
+    "id": "project-002",
+    "slug": "chroma-haute-couture",
+    "title": "Chroma: Digital Haute Couture",
+    "description": "An avant-garde fashion film blending hyper-stylized silk textures, zero-gravity fabric physics, and fluid surrealist motion.",
+    "category": "Commercial & Brand",
+    "tools": [
+      "Luma Dream Machine",
+      "Midjourney v6.1",
+      "ElevenLabs",
+      "After Effects"
+    ],
+    "tags": [
+      "fashion",
+      "editorial",
+      "surrealism",
+      "fluid-motion",
+      "lighting"
+    ],
+    "thumbnail": "https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=1200&auto=format&fit=crop",
+    "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ",
+    "background": "Developed for a virtual runway exhibition, Chroma reimagines textile dynamics without physical world gravity constraints. Silks float like underwater bioluminescent organisms while preserving photorealistic weave detail.",
+    "creativeProcess": "1. Textile Prompt Matrix: Established an 8-variable prompt matrix isolating fabric thread count, iridescence index, and wind velocity.\n2. Luma Camera Keyframing: Used Luma Dream Machine to execute continuous 360-degree orbital camera rotations around the moving model.\n3. Motion Tracking & Title Design: Cleaned micro-artifacts and added minimal typographic motion tracking in Adobe After Effects.",
+    "promptIds": [
+      "prompt-002"
+    ],
+    "credits": [
+      "Creative Director: [Your Name]",
+      "Virtual Wardrobe Synthesis: Aura AI Labs"
+    ],
+    "featured": true,
+    "status": "published",
+    "createdAt": "2026-02-04"
+  },
+  {
+    "id": "project-003",
+    "slug": "whispers-of-neo-kyoto",
+    "title": "Whispers of Neo-Kyoto",
+    "description": "Atmospheric worldbuilding exploration combining traditional Japanese woodblock aesthetics with cybernetic rain-drenched streets.",
+    "category": "Worldbuilding",
+    "tools": [
+      "Kling AI",
+      "Midjourney v6.1",
+      "Topaz Video AI"
+    ],
+    "tags": [
+      "worldbuilding",
+      "cyberpunk",
+      "rain",
+      "neon",
+      "environment"
+    ],
+    "thumbnail": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?q=80&w=1200&auto=format&fit=crop",
+    "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ",
+    "background": "An architectural study examining how traditional heritage craft and hyper-dense futuristic cityscapes can harmoniously coexist in synthetic cinematography.",
+    "creativeProcess": "1. Multi-prompt Depth Layering: Modeled background, midground, and foreground elements with distinctive depth-of-field separation.\n2. Kling AI Simulation: Synthesized realistic raindrop splashing physics on illuminated wet cobblestones.\n3. Dynamic Lighting Integration: Balanced contrasting warm lantern glow with cool neon cyan reflections.",
+    "promptIds": [
+      "prompt-003"
+    ],
+    "credits": [
+      "Environment Design & Prompting: [Your Name]"
+    ],
+    "featured": true,
+    "status": "published",
+    "createdAt": "2026-02-22"
+  },
+  {
+    "id": "project-004",
+    "slug": "bioluminescent-abyss",
+    "title": "The Deep Abyss: Micro-Ecosystems",
+    "description": "Macro nature documentary style examination of hypothetical deep-sea alien organisms radiating pulse-driven illumination.",
+    "category": "Nature & Science",
+    "tools": [
+      "Runway Gen-3 Alpha",
+      "Midjourney v6.1"
+    ],
+    "tags": [
+      "macro",
+      "documentary",
+      "nature",
+      "bioluminescence"
+    ],
+    "thumbnail": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=1200&auto=format&fit=crop",
+    "videoUrl": "",
+    "embedUrl": "",
+    "background": "A research exploration demonstrating how generative video models can simulate extreme macro-lens optics and biological fluid currents.",
+    "creativeProcess": "Utilized 100mm macro lens prompts with shallow depth of field (f/2.8) and gentle particle drift vectors.",
+    "promptIds": [
+      "prompt-001"
+    ],
+    "credits": [
+      "Director: [Your Name]"
+    ],
+    "featured": false,
+    "status": "published",
+    "createdAt": "2026-03-01"
+  }
+]

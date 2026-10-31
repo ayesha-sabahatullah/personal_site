@@ -1,0 +1,177 @@
+[
+  {
+    "id": "prompt-001",
+    "slug": "cinematic-orbital-twilight",
+    "title": "Orbital Archive in Rose Twilight",
+    "description": "Slow, cinematic anamorphic pan through a decommissioned space station conservatory with floating crystalline dust and warm twilight rim light.",
+    "prompt": "Cinematic 35mm Panavision anamorphic shot, interior of a zero-gravity botanical orbital station at sunset, delicate pink cherry blossom petals drifting weightlessly through golden hour light shafts, dust motes glowing, soft atmospheric haze, 8k resolution, photorealistic, subtle camera push-in, shallow depth of field, f/1.8, warm rose and copper color grading, highly detailed architectural glass --ar 16:9 --v 6.1 --stylize 250",
+    "negativePrompt": "low resolution, jittery motion, abrupt cuts, overexposed blown out highlights, warped geometry, plastic skin, distorted reflections, cartoon, 3D CGI render look",
+    "category": "Cinematic",
+    "tools": [
+      "Midjourney v6.1",
+      "Runway Gen-3 Alpha"
+    ],
+    "tags": [
+      "cinematic",
+      "sci-fi",
+      "lighting",
+      "anamorphic",
+      "slow-motion"
+    ],
+    "thumbnail": "",
+    "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "generationSettings": {
+      "Aspect Ratio": "16:9",
+      "Motion Score": "3 (Gentle Push-in)",
+      "Camera": "Slow tracking dolly forward",
+      "Seed": "89421035",
+      "CFG Scale": "7.5",
+      "Duration": "10s",
+      "Target Framerate": "24fps cinematic"
+    },
+    "creationNotes": "For best results in Runway Gen-3 Alpha, upload the initial Midjourney frame as First Frame and specify: 'Slow smooth push-in along the optical axis, zero abrupt acceleration, preserve fine petal particles'. Keep motion score between 2 and 4 to avoid temporal warp.",
+    "projectIds": [
+      "project-001"
+    ],
+    "featured": true,
+    "status": "published",
+    "createdAt": "2026-01-20"
+  },
+  {
+    "id": "prompt-002",
+    "slug": "floating-silk-couture",
+    "title": "Zero-G Iridescent Silk Motion",
+    "description": "Slow-motion high fashion editorial of iridescent layered organza undulating in atmospheric mist with soft pink studio lighting.",
+    "prompt": "High fashion editorial film still, haute couture model draped in multilayered iridescent translucent organza, floating suspended in mid-air surrounded by gentle pink-tinted vapor, Hasselblad medium format portrait, 85mm lens, f/2.0, Rembrandt studio lighting with soft rose fill and rim accents, fabric undulating fluidly like marine silk, hyper-detailed textile weave --ar 9:16 --v 6.1",
+    "negativePrompt": "rigid cloth, stiff animations, pixelation, low-contrast, deformed limbs, oversaturated neon, flat lighting",
+    "category": "Fashion & Editorial",
+    "tools": [
+      "Midjourney v6.1",
+      "Luma Dream Machine"
+    ],
+    "tags": [
+      "fashion",
+      "fabric-physics",
+      "editorial",
+      "portrait",
+      "studio-lighting"
+    ],
+    "thumbnail": "",
+    "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "generationSettings": {
+      "Aspect Ratio": "9:16",
+      "Motion Score": "4 (Fluid Wave)",
+      "Camera": "Subtle orbital roll",
+      "Prompt Weight": "1.2",
+      "Model": "Luma Ray 2 / Dream Machine"
+    },
+    "creationNotes": "To simulate natural fabric drag, pair this prompt with negative tokens suppressing hard geometric folds. Luma handles continuous vertical silk waves exceptionally well when camera movement is restricted to subtle rolls.",
+    "projectIds": [
+      "project-002"
+    ],
+    "featured": true,
+    "status": "published",
+    "createdAt": "2026-02-05"
+  },
+  {
+    "id": "prompt-003",
+    "slug": "rainy-neon-cyberpunk-alley",
+    "title": "Rain-Slicked Neo-Kyoto Reflections",
+    "description": "Atmospheric low-angle tracking shot through a rain-drenched neon alley with glowing paper lanterns and cybernetic reflections.",
+    "prompt": "Steadicam low-angle tracking shot gliding through a dense narrow alley in Neo-Kyoto at night during heavy rain, shimmering pink neon signage reflected on wet asphalt puddles, traditional glowing paper lanterns casting warm magenta amber halos, steam rising from street ramen grates, water droplets splashing in hyper-slow-motion, Alexa Mini LF, Cooke anamorphic lenses, cinematic movie scene --ar 16:9",
+    "negativePrompt": "daylight, dry pavement, blurry textures, oversaturated solid green, cartoon characters, stock footage watermark",
+    "category": "Sci-Fi & Cyberpunk",
+    "tools": [
+      "Kling AI",
+      "Topaz Video AI"
+    ],
+    "tags": [
+      "cyberpunk",
+      "rain",
+      "reflections",
+      "tracking-shot",
+      "environment"
+    ],
+    "thumbnail": "",
+    "videoUrl": "",
+    "generationSettings": {
+      "Aspect Ratio": "16:9",
+      "Creativity Index": "0.6",
+      "Motion Magnitude": "5",
+      "Temporal Coherence": "High"
+    },
+    "creationNotes": "Kling AI excels at water droplet physics. Add 'continuous steady forward track at eye level' in the Kling motion prompt to keep the street perspective rock-solid.",
+    "projectIds": [
+      "project-003"
+    ],
+    "featured": true,
+    "status": "published",
+    "createdAt": "2026-02-24"
+  },
+  {
+    "id": "prompt-004",
+    "slug": "deep-space-stasis-pod",
+    "title": "Cryo-Pod Awakening in Nebula Light",
+    "description": "Dramatic sci-fi macro shot of an astronaut opening their eyes inside an illuminated hibernation capsule glowing with soft rose-tinted cryo-fluid.",
+    "prompt": "Cinematic close-up macro portrait of an astronaut inside a frost-covered cryo-hibernation pod slowly opening eyes, warm pink bio-luminescent liquid draining, condensation pearls on curved glass, reflections of distant magenta galaxy cluster in pupils, Arri Alexa 65, Master Prime 100mm macro, soft atmospheric lighting, intense emotional realism --ar 2.39:1",
+    "negativePrompt": "closed eyes, static image, deformed pupil, artificial face smoothing, harsh spotlight",
+    "category": "Cinematic",
+    "tools": [
+      "Runway Gen-3 Alpha",
+      "Topaz Video AI"
+    ],
+    "tags": [
+      "macro",
+      "portrait",
+      "sci-fi",
+      "emotions",
+      "cinematic"
+    ],
+    "thumbnail": "",
+    "videoUrl": "",
+    "generationSettings": {
+      "Aspect Ratio": "2.39:1",
+      "Motion Score": "2",
+      "Camera": "Macro slow drift"
+    },
+    "creationNotes": "When prompting eye movements in Gen-3, keep prompt concise: 'Subtle slow blink, eyes adjust to light, soft breathing motion'. Heavy wording in motion prompts causes face distortion.",
+    "projectIds": [
+      "project-001"
+    ],
+    "featured": true,
+    "status": "published",
+    "createdAt": "2026-03-02"
+  },
+  {
+    "id": "prompt-005",
+    "slug": "ethereal-desert-dune-sculpture",
+    "title": "Rose Quartz Monolith in Sahara Winds",
+    "description": "Sweeping drone hyperlapse over shifting pink sand dunes revealing a translucent crystalline monolith echoing ancient architecture.",
+    "prompt": "Epic aerial drone cinematographic footage sweeping over rolling soft pink sand dunes in a surreal desert, giant towering translucent rose quartz monolith emerging from golden sands, wind blowing fine particulate sand ribbons across dunes, golden hour sunset backlight, 70mm IMAX cinematography, hyper-detailed geological textures, pristine scale --ar 16:9",
+    "negativePrompt": "flat landscape, grainy low-res, cloudy overcast, artificial plastic look",
+    "category": "Abstract Motion",
+    "tools": [
+      "Luma Dream Machine",
+      "Midjourney v6.1"
+    ],
+    "tags": [
+      "aerial",
+      "drone",
+      "landscape",
+      "desert",
+      "monolith"
+    ],
+    "thumbnail": "",
+    "videoUrl": "",
+    "generationSettings": {
+      "Aspect Ratio": "16:9",
+      "Motion Score": "6 (FPV Flight)",
+      "Model": "Dream Machine v1.5"
+    },
+    "creationNotes": "Use words like 'continuous forward flight vector' to instruct the camera model to maintain steady elevation above the dune ridges.",
+    "projectIds": [],
+    "featured": false,
+    "status": "published",
+    "createdAt": "2026-03-10"
+  }
+]

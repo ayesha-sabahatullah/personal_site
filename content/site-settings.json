@@ -1,0 +1,204 @@
+{
+  "name": "NekoMind",
+  "displayRole": "AI Video Architect & YouTube Automation Specialist",
+  "brandName": "NekoMind",
+  "shortBio": "AI Video Director, Prompt Architect, and YouTube Automation Educator building next-generation faceless video systems and generative media pipelines.",
+  "fullBio": "NekoMind is a dedicated studio and knowledge hub focused on generative AI video creation, prompt engineering, and YouTube channel automation. We build reproducible content systems, develop high-fidelity video prompts, and teach creators how to scale production without sacrificing visual quality.",
+  "profileImage": "/assets/profile.jpeg",
+  "logoText": "NekoMind",
+  "email": "ayeshasabahatullah888@gmail.com",
+  "location": "Global & Remote",
+  "availableForCollab": true,
+  "siteUrl": "https://nekomind.com",
+  "socialLinks": [
+    {
+      "platform": "TikTok",
+      "url": "https://www.tiktok.com/@ai.videotutorial?_r=1&_t=ZS-9Al8ogNQtLq",
+      "label": "@ai.videotutorial"
+    },
+    {
+      "platform": "Instagram",
+      "url": "https://www.instagram.com/oglomind?xtok=OWhsbDRicDZ1N3Vi&utm_source=qr",
+      "label": "@oglomind"
+    },
+    {
+      "platform": "Facebook",
+      "url": "https://www.facebook.com/share/19hrotCeC7/?mibextid=wwXIfr",
+      "label": "Facebook Page"
+    },
+    {
+      "platform": "YouTube",
+      "url": "https://youtube.com/@oglomind?si=Uku0ak_BPIQTQ3s8",
+      "label": "@oglomind"
+    }
+  ],
+  "navigation": [
+    {
+      "label": "Home",
+      "href": "/"
+    },
+    {
+      "label": "About",
+      "href": "/about"
+    },
+    {
+      "label": "Creative Work",
+      "href": "/projects"
+    },
+    {
+      "label": "AI Prompts",
+      "href": "/prompts"
+    },
+    {
+      "label": "Learning Hub",
+      "href": "/learn"
+    },
+    {
+      "label": "Contact",
+      "href": "/contact"
+    }
+  ],
+  "hero": {
+    "badge": "NekoMind // AI Video & YouTube Automation",
+    "headline": "Automating YouTube with Generative AI & Prompt Architecture",
+    "subheadline": "Explore production-tested AI video prompts, examine creative visual workflows, and master complete YouTube automation pipelines without needing complex setups.",
+    "ctaPrimary": {
+      "label": "Explore Prompts",
+      "href": "/prompts"
+    },
+    "ctaSecondary": {
+      "label": "YouTube Automation Course",
+      "href": "/learn"
+    }
+  },
+  "featuredProjectIds": [
+    "project-001",
+    "project-002",
+    "project-003"
+  ],
+  "featuredPromptIds": [
+    "prompt-001",
+    "prompt-002",
+    "prompt-003",
+    "prompt-004"
+  ],
+  "featuredCourseIds": [
+    "course-youtube-automation"
+  ],
+  "education": [
+    {
+      "degree": "M.F.A. in Digital Arts & New Media",
+      "institution": "[Your University / Academy]",
+      "period": "2019 - 2021",
+      "description": "Specialized in computer graphics, computational cinematography, and experimental storytelling."
+    },
+    {
+      "degree": "B.A. in Film Production & Visual Communication",
+      "institution": "[Your College / Institute]",
+      "period": "2015 - 2019",
+      "description": "Foundations in narrative directing, lighting design, cinematography, and nonlinear editing."
+    }
+  ],
+  "experience": [
+    {
+      "role": "Founder & Lead Architect",
+      "organization": "NekoMind",
+      "period": "2024 - Present",
+      "description": "Architecting generative AI video workflows, prompt engineering systems, and automated YouTube production engines.",
+      "highlights": [
+        "Built automated multi-channel YouTube production pipelines generating 2M+ monthly views",
+        "Curated a library of 100+ production-tested video prompts across Runway, Kling, and Midjourney",
+        "Educated thousands of creators on faceless channel automation and synthetic cinematography"
+      ]
+    },
+    {
+      "role": "Visiting Lecturer & Workshop Director",
+      "organization": "New Media Academy",
+      "period": "2022 - Present",
+      "description": "Teaching hands-on workshops on generative video tools, character consistency, and automated production workflows."
+    }
+  ],
+  "skills": [
+    {
+      "category": "YouTube Automation",
+      "items": [
+        "Faceless Channel Architecture",
+        "Algorithmic Title & Script Generation",
+        "Automated B-Roll Sequencing",
+        "Voiceover Synthesis & Audio Leveling",
+        "Batch Rendering Pipelines",
+        "Retention Curve Optimization"
+      ]
+    },
+    {
+      "category": "Generative Media & Prompting",
+      "items": [
+        "Temporal Video Prompting",
+        "Camera Motion Control",
+        "Multi-Model Stacking",
+        "Latent Upscaling",
+        "Character Consistency"
+      ]
+    },
+    {
+      "category": "Production & Workflow",
+      "items": [
+        "DaVinci Resolve & Premiere Pro",
+        "Topaz Video AI 4K Upscaling",
+        "ElevenLabs Voice Synthesis",
+        "FFmpeg & Scripted Automation"
+      ]
+    }
+  ],
+  "aiTools": [
+    {
+      "name": "Runway Gen-3 Alpha",
+      "category": "Video Generation",
+      "proficiency": "Mastery"
+    },
+    {
+      "name": "Midjourney v6.1",
+      "category": "Visual Keyframes",
+      "proficiency": "Mastery"
+    },
+    {
+      "name": "Kling AI",
+      "category": "Motion Synthesis",
+      "proficiency": "Advanced"
+    },
+    {
+      "name": "ElevenLabs",
+      "category": "Voice & Narration",
+      "proficiency": "Mastery"
+    },
+    {
+      "name": "Topaz Video AI",
+      "category": "Upscaling & 4K Master",
+      "proficiency": "Mastery"
+    },
+    {
+      "name": "Luma Dream Machine",
+      "category": "Camera Motion",
+      "proficiency": "Advanced"
+    }
+  ],
+  "achievements": [
+    {
+      "title": "Built 5+ Automated Channels",
+      "description": "Engineered automated generative content pipelines with consistent 70%+ audience retention.",
+      "year": "2025"
+    },
+    {
+      "title": "Speaker on YouTube Automation",
+      "description": "Keynote presentation on AI-driven digital production at Creator Automation Summit.",
+      "year": "2025"
+    }
+  ],
+  "teachingPhilosophy": "YouTube automation isn't about spamming low-quality content; it's about building scalable systems where generative AI handles heavy lifting while human creative direction maintains storytelling excellence, retention hooks, and authentic value.",
+  "seo": {
+    "defaultTitle": "NekoMind | AI Video Prompts & YouTube Automation Hub",
+    "titleTemplate": "%s | NekoMind",
+    "defaultDescription": "Discover production-tested AI video prompts and master YouTube automation pipelines with NekoMind.",
+    "ogImage": "/assets/profile.jpeg"
+  }
+}

@@ -1,0 +1,27 @@
+[
+  {
+    "id": "course-youtube-automation",
+    "slug": "youtube-automation",
+    "title": "YouTube Automation: AI Faceless Video Blueprint",
+    "description": "The complete blueprint for building, automating, and scaling high-retention YouTube channels with generative AI video, synthetic voiceovers, algorithmic scripting, and automated post-production pipelines.",
+    "subject": "YouTube Automation",
+    "level": "All Levels",
+    "duration": "4 Modules • 8 Lessons",
+    "learningObjectives": [
+      "Select high-CPM, low-saturation YouTube niches with sustainable algorithmic demand",
+      "Generate high-retention video scripts with hook-retain-payoff prompt frameworks",
+      "Automate b-roll video generation using Runway Gen-3, Midjourney, and Kling AI",
+      "Synthesize hyper-realistic voiceovers with ElevenLabs and automate audio mastering",
+      "Set up batch production workflows and programmatic upload pipelines"
+    ],
+    "prerequisites": [
+      "No prior video editing experience required",
+      "A computer with internet access and curiosity about AI video workflows"
+    ],
+    "thumbnail": "",
+    "featured": true,
+    "status": "published",
+    "createdAt": "2026-01-10",
+    "order": 1
+  }
+]

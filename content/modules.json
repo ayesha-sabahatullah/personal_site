@@ -1,0 +1,62 @@
+[
+  {
+    "id": "mod-yt-01",
+    "slug": "niche-selection-channel-strategy",
+    "courseId": "course-youtube-automation",
+    "title": "Niche Selection & Algorithmic Channel Strategy",
+    "description": "Evaluate high-RPM faceless niches, analyze viral video structures, and establish a repeatable channel brand identity.",
+    "learningObjectives": [
+      "Identify high-earning niches (Tech, Finance, History, Sci-Fi Documentaries)",
+      "Reverse-engineer competitor retention patterns and click-through rates",
+      "Establish visual style guides and color palettes for instant channel recognition"
+    ],
+    "order": 1,
+    "status": "published",
+    "createdAt": "2026-01-11"
+  },
+  {
+    "id": "mod-yt-02",
+    "slug": "algorithmic-scriptwriting-hooks",
+    "courseId": "course-youtube-automation",
+    "title": "Algorithmic Scriptwriting & 30-Second Hooks",
+    "description": "Master structured prompt frameworks for generating 8-12 minute video scripts engineered for maximum viewer retention.",
+    "learningObjectives": [
+      "Write 5-second curiosity hooks that eliminate initial drop-off",
+      "Deploy open narrative loops throughout the middle third of videos",
+      "Automate chapter segmentation and pacing cues"
+    ],
+    "order": 2,
+    "status": "published",
+    "createdAt": "2026-01-14"
+  },
+  {
+    "id": "mod-yt-03",
+    "slug": "ai-visual-generation-b-roll",
+    "courseId": "course-youtube-automation",
+    "title": "AI Visual Generation & Dynamic B-Roll Pipelines",
+    "description": "Batch generate high-definition visual keyframes and motion clips using Midjourney, Runway Gen-3, and Kling AI.",
+    "learningObjectives": [
+      "Build batch prompting spreadsheets for 50+ scene b-roll sequences",
+      "Ensure character and aesthetic consistency across automated scenes",
+      "Animate static concept art into cinematic 4K camera movements"
+    ],
+    "order": 3,
+    "status": "published",
+    "createdAt": "2026-01-18"
+  },
+  {
+    "id": "mod-yt-04",
+    "slug": "voiceover-assembly-publishing",
+    "courseId": "course-youtube-automation",
+    "title": "Voiceover Synthesis, Assembly & Publishing",
+    "description": "Synthesize realistic vocal tracks, automate captions and music ducking, and streamline the weekly upload cadence.",
+    "learningObjectives": [
+      "Configure ElevenLabs voice stability and emotional cadence for narration",
+      "Automate subtitle generation, visual zooms, and sound effects",
+      "Develop repeatable upload checklists and YouTube metadata templates"
+    ],
+    "order": 4,
+    "status": "published",
+    "createdAt": "2026-01-22"
+  }
+]

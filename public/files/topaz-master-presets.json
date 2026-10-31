@@ -1,0 +1,31 @@
+{
+  "name": "Cinematic 4K Master Preset",
+  "author": "Aura AI Studios",
+  "version": "1.0",
+  "modelSettings": {
+    "interpolation": {
+      "model": "Chronos Fast",
+      "targetFps": 24,
+      "sensitivity": 60
+    },
+    "enhancement": {
+      "model": "Proteus Fine Tune v4",
+      "revertCompression": 35,
+      "recoverDetails": 40,
+      "sharpen": 15,
+      "reduceNoise": 10,
+      "dehalo": 10,
+      "antiAlias": 15
+    },
+    "grain": {
+      "enabled": true,
+      "amount": 2.0,
+      "size": 1.5
+    }
+  },
+  "export": {
+    "codec": "ProRes 422 HQ",
+    "colorSpace": "Rec.709 Gamma 2.4",
+    "container": "mov"
+  }
+}
