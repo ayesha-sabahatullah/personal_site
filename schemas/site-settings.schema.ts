@@ -9,6 +9,7 @@ export const SiteSettingsSchema = z.object({
   profileImage: z.string().min(1, 'Profile image path is required'),
   logoText: z.string().default('STUDIO'),
   email: z.string().email('Invalid email address'),
+  phone: z.string().optional(),
   location: z.string().optional(),
   availableForCollab: z.boolean().default(true),
   siteUrl: z.string().url('Site URL must be a valid URL'),

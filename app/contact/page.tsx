@@ -2,12 +2,12 @@ import type { Metadata } from 'next';
 import { getSiteSettings } from '@/lib/content';
 import { constructMetadata } from '@/lib/seo';
 import { Breadcrumbs } from '@/components/shared/Breadcrumbs';
-import { Mail, MapPin, MessageSquare, ArrowUpRight } from 'lucide-react';
+import { Mail, MapPin, MessageSquare, ArrowUpRight, Phone } from 'lucide-react';
 
 export const metadata: Metadata = constructMetadata({
   title: 'Contact',
   description:
-    'Contact NekoMind for AI video production, prompt engineering, YouTube automation collaborations, and speaking inquiries.',
+    'Contact ZekoMind for AI video production, prompt engineering, YouTube automation collaborations, and speaking inquiries.',
   canonical: '/contact',
 });
 
@@ -53,6 +53,23 @@ export default function ContactPage() {
               </a>
             </dd>
           </div>
+
+          {settings.phone && (
+            <div className="space-y-1">
+              <dt className="text-xs font-mono uppercase tracking-wider text-[#BE185D] font-bold">
+                Phone
+              </dt>
+              <dd>
+                <a
+                  href={`tel:${settings.phone.replace(/[^\d+]/g, '')}`}
+                  className="inline-flex items-center gap-2 text-sm sm:text-base font-semibold text-[#351827] hover:text-[#BE185D] transition-colors"
+                >
+                  <Phone className="w-4 h-4 text-[#E75480] shrink-0" />
+                  <span>{settings.phone}</span>
+                </a>
+              </dd>
+            </div>
+          )}
 
           {settings.location && (
             <div className="space-y-1">

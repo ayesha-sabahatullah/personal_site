@@ -3,7 +3,7 @@
   "configVersion": 1,
   "workspaces": {
     "": {
-      "name": "nekomind",
+      "name": "zekomind",
       "dependencies": {
         "@hookform/resolvers": "^5.2.1",
         "autoprefixer": "^10.4.21",

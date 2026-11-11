@@ -1,12 +1,12 @@
-# NekoMind — AI Video Prompts & YouTube Automation Hub
+# ZekoMind — AI Video Prompts & YouTube Automation Hub
 
-A professional, editorial website for **NekoMind**, focused on AI video creation, prompt engineering, and YouTube channel automation.
+A professional, editorial website for **ZekoMind**, focused on AI video creation, prompt engineering, and YouTube channel automation.
 
 ---
 
 ## 🚀 Key Highlights & New Updates
 
-1. **Website Brand**: **NekoMind** — AI Video & Automation Hub.
+1. **Website Brand**: **ZekoMind** — AI Video & Automation Hub.
 2. **Zero Picture Dependency for Content Updates**:
    - Prompts, courses, modules, and lessons can be created or updated purely in JSON without requiring any images or thumbnail URLs.
    - When any JSON file under `/content/` is updated, the website immediately reflects the new content.

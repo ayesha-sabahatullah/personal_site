@@ -1,12 +1,13 @@
 {
-  "name": "NekoMind",
+  "name": "ZekoMind",
   "displayRole": "AI Video Architect & YouTube Automation Specialist",
-  "brandName": "NekoMind",
+  "brandName": "ZekoMind",
   "shortBio": "AI Video Director, Prompt Architect, and YouTube Automation Educator building next-generation faceless video systems and generative media pipelines.",
-  "fullBio": "NekoMind is a dedicated studio and knowledge hub focused on generative AI video creation, prompt engineering, and YouTube channel automation. We build reproducible content systems, develop high-fidelity video prompts, and teach creators how to scale production without sacrificing visual quality.",
+  "fullBio": "ZekoMind is a dedicated studio and knowledge hub focused on generative AI video creation, prompt engineering, and YouTube channel automation. We build reproducible content systems, develop high-fidelity video prompts, and teach creators how to scale production without sacrificing visual quality.",
   "profileImage": "/assets/profile.jpeg",
-  "logoText": "NekoMind",
+  "logoText": "ZekoMind",
   "email": "ayeshasabahatullah888@gmail.com",
+  "phone": "0327-4588978",
   "location": "Global & Remote",
   "availableForCollab": true,
   "siteUrl": "https://nekomind.com",
@@ -59,7 +60,7 @@
     }
   ],
   "hero": {
-    "badge": "NekoMind // AI Video & YouTube Automation",
+    "badge": "ZekoMind // AI Video & YouTube Automation",
     "headline": "Automating YouTube with Generative AI & Prompt Architecture",
     "subheadline": "Explore production-tested AI video prompts, examine creative visual workflows, and master complete YouTube automation pipelines without needing complex setups.",
     "ctaPrimary": {
@@ -102,7 +103,7 @@
   "experience": [
     {
       "role": "Founder & Lead Architect",
-      "organization": "NekoMind",
+      "organization": "ZekoMind",
       "period": "2024 - Present",
       "description": "Architecting generative AI video workflows, prompt engineering systems, and automated YouTube production engines.",
       "highlights": [
@@ -196,9 +197,9 @@
   ],
   "teachingPhilosophy": "YouTube automation isn't about spamming low-quality content; it's about building scalable systems where generative AI handles heavy lifting while human creative direction maintains storytelling excellence, retention hooks, and authentic value.",
   "seo": {
-    "defaultTitle": "NekoMind | AI Video Prompts & YouTube Automation Hub",
-    "titleTemplate": "%s | NekoMind",
-    "defaultDescription": "Discover production-tested AI video prompts and master YouTube automation pipelines with NekoMind.",
+    "defaultTitle": "ZekoMind | AI Video Prompts & YouTube Automation Hub",
+    "titleTemplate": "%s | ZekoMind",
+    "defaultDescription": "Discover production-tested AI video prompts and master YouTube automation pipelines with ZekoMind.",
     "ogImage": "/assets/profile.jpeg"
   }
 }

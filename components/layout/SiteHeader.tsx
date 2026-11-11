@@ -44,7 +44,7 @@ export function SiteHeader({ settings }: SiteHeaderProps) {
             </div>
             <div className="flex flex-col">
               <span className="font-serif font-bold text-base sm:text-xl tracking-tight text-[#351827]">
-                NekoMind
+                ZekoMind
               </span>
               <span className="text-[10px] uppercase tracking-widest text-[#795B6B] font-mono">
                 AI Video & Automation

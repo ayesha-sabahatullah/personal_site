@@ -43,7 +43,7 @@ export default function LearnPage() {
           <span>Curriculum & Syllabi</span>
         </div>
         <h1 className="font-serif text-3xl sm:text-5xl font-medium text-[#351827]">
-          NekoMind Learning Hub
+          ZekoMind Learning Hub
         </h1>
         <p className="text-sm sm:text-base text-[#795B6B] max-w-2xl leading-relaxed">
           Master end-to-end YouTube automation with structured modules, script architectures, and visual generation workflows.

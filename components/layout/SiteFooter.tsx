@@ -39,7 +39,7 @@ export function SiteFooter({ settings }: SiteFooterProps) {
                 <Sparkles className="w-3.5 h-3.5" />
               </div>
               <span className="font-serif font-bold text-xl text-[#351827]">
-                NekoMind
+                ZekoMind
               </span>
             </Link>
             <p className="text-xs sm:text-sm text-[#795B6B] leading-relaxed">
@@ -128,7 +128,7 @@ export function SiteFooter({ settings }: SiteFooterProps) {
             <ul className="space-y-2 text-xs sm:text-sm">
               <li>
                 <Link href="/about" className="hover:text-[#BE185D] transition-colors">
-                  About NekoMind
+                  About ZekoMind
                 </Link>
               </li>
               <li>
@@ -148,7 +148,7 @@ export function SiteFooter({ settings }: SiteFooterProps) {
         {/* Bottom bar */}
         <div className="pt-8 border-t border-[#F1D5E0] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
           <p className="text-[#795B6B]">
-            &copy; {currentYear} NekoMind. All rights reserved. Built with Next.js, TypeScript & Tailwind CSS.
+            &copy; {currentYear} ZekoMind. All rights reserved. Built with Next.js, TypeScript & Tailwind CSS.
           </p>
 
           <button
